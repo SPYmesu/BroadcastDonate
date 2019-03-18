@@ -11,18 +11,18 @@ public class CommandBCDonate extends Command{
     }
 
     @Override
-    public boolean execute(CommandSender commandSender, String s, String[] args) {
-        if (!commandSender.equals(Bukkit.getConsoleSender()) && Main.isConsole) {
+    public boolean execute(CommandSender commandSender, String s, String[] args){
+        if(!commandSender.equals(Bukkit.getConsoleSender()) && Main.isConsole){
             commandSender.sendMessage("Эта команда может использоваться только из консоли");
             return false;
         }
 
-        if (!commandSender.hasPermission(Main.permission)) {
+        if(!commandSender.hasPermission(Main.permission)){
             commandSender.sendMessage(Main.noPermission);
             return false;
         }
 
-        if (args.length != 2) {
+        if(args.length != 2){
             commandSender.sendMessage(Main.usage);
             return false;
         }
